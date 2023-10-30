@@ -1,7 +1,7 @@
 {
-  "id": "token-action-hud-template",
-  "title": "Token Action HUD Template",
-  "description": "Token Action HUD is a repositionable HUD of actions for a selected token",
+  "id": "fvtt-token-action-hud-genesys",
+  "title": "Token Action HUD Genesys",
+  "description": "Token Action HUD Genesys is a repositionable HUD of actions for a selected token",
   "authors": [
     {
       "name": "Larkinabout",
@@ -9,38 +9,38 @@
     }
   ],
   "url": "This is auto replaced",
-  "flags": {},
   "version": "This is auto replaced",
   "compatibility": {
     "minimum": "11",
     "verified": "11.313"
   },
   "esmodules": [
-    "./scripts/init.js"
-  ],
-  "scripts": [
+    "scripts/init.js"
   ],
   "styles": [
-    "./styles/tah-template-style.css"
+    "styles/tah-template-style.css"
   ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "languages/en.json"
+      "path": "languages/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "languages/fr.json",
+      "flags": {}
     }
   ],
-  "packs": [],
   "relationships": {
     "systems": [
       {
-        "id": "template",
+        "id": "genesys",
         "type": "system",
         "compatibility": [
-          {
-            "minimum": "1.0.0",
-            "verified": "1.0.0"
-          }
+          null
         ]
       }
     ],
@@ -49,24 +49,15 @@
         "id": "token-action-hud-core",
         "type": "module",
         "compatibility": [
-          {
-            "minimum": "1.5.0",
-            "maximum": "1.5",
-            "verified": "1.5.0"
-          }
+          null
         ]
       }
     ],
-    "optional": [],
     "flags": {
       "optional": []
     }
   },
-  "socket": false,
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://github.com/Larkinabout/fvtt-token-action-hud-template#readme",
-  "protected": false,
-  "coreTranslation": false,
-  "library": false
+  "readme": "https://github.com/Larkinabout/fvtt-token-action-hud-template#readme"
 }
