@@ -10,7 +10,7 @@ export const MODULE = {
  * Core module
  */
 export const CORE_MODULE = {
-    ID: 'token-action-hud-core'
+    ID: 'fvtt-token-action-hud-genesys'
 }
 
 /**
