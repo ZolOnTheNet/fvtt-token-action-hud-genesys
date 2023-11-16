@@ -1,16 +1,20 @@
 {
-  "id": "token-action-hud-template",
-  "title": "Token Action HUD Template",
+  "id": "fvtt-token-action-hud-genesys",
+  "title": "Token Action HUD Genesys",
   "description": "Token Action HUD is a repositionable HUD of actions for a selected token",
   "authors": [
     {
       "name": "Larkinabout",
       "url": "https://github.com/Larkinabout"
+    },
+    {
+      "name":"ZolOnTheNet",
+      "url": "https://github.com/ZolOnTheNet"
     }
   ],
-  "url": "This is auto replaced",
+  "url": "https://github.com/ZolOnTheNet/fvtt-token-action-hud-genesys",
   "flags": {},
-  "version": "This is auto replaced",
+  "version": "0.1",
   "compatibility": {
     "minimum": "11",
     "verified": "11.313"
@@ -28,18 +32,23 @@
       "lang": "en",
       "name": "English",
       "path": "languages/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "français",
+      "path": "languages/fr.json"
     }
   ],
   "packs": [],
   "relationships": {
     "systems": [
       {
-        "id": "template",
+        "id": "genesys",
         "type": "system",
         "compatibility": [
           {
-            "minimum": "1.0.0",
-            "verified": "1.0.0"
+            "minimum": "0.1.15",
+            "verified": "0.1.15"
           }
         ]
       }
@@ -63,8 +72,8 @@
     }
   },
   "socket": false,
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
+  "manifest": "A mettre a jour",
+  "download": "A mettre a jour",
   "readme": "https://github.com/Larkinabout/fvtt-token-action-hud-template#readme",
   "protected": false,
   "coreTranslation": false,

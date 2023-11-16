@@ -1,0 +1,20 @@
+{
+    "tokenActionHud": {
+      "template": {
+        "armor": "Armure",
+        "containers": "Containers",
+        "consumables": "Consommables",
+        "equipment": "Equipement",
+        "inventory": "Inventaire",
+        "item": "Objets",
+        "weapons": "Armes",
+        "treasure": "Trésor",
+        "settings": {
+          "displayUnequipped": {
+            "hint": "Voir les objets non équipée dans le HUD",
+            "name": "Affichier les non équipé"
+          }
+        }
+      }
+    }
+  }
