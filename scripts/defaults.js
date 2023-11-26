@@ -16,9 +16,19 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
     DEFAULTS = {
         layout: [
             {
+                nestId: 'personnage',
+                id: 'personnage',
+                name: coreModule.api.Utils.i18n('tokenActionHud.template.perso'),
+                groups: [
+                    { ...groups.skill, nestId: 'personnage_skill' },
+                    { ...groups.carac, nestId: 'personnage_carac' }
+                ]
+            },
+            {
                 nestId: 'inventory',
                 id: 'inventory',
-                name: coreModule.api.Utils.i18n('Template.Inventory'),
+//                name: coreModule.api.Utils.i18n('template.inventory'),
+                name:game.i18n.localize('tokenActionHud.template.inventory'),
                 groups: [
                     { ...groups.weapons, nestId: 'inventory_weapons' },
                     { ...groups.armor, nestId: 'inventory_armor' },

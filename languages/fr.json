@@ -1,12 +1,15 @@
 {
     "tokenActionHud": {
       "template": {
+        "perso":"Personnage",
+        "carac":"Attributs",
         "armor": "Armure",
         "containers": "Containers",
         "consumables": "Consommables",
         "equipment": "Equipement",
         "inventory": "Inventaire",
-        "item": "Objets",
+        "item": "Objet",
+        "skills": "Cmps",
         "weapons": "Armes",
         "treasure": "Trésor",
         "settings": {
@@ -16,5 +19,31 @@
           }
         }
       }
+    },
+    "Genesys": {
+      "Characteristics": {
+        "Brawn":"Brawn",
+         "Agility":"Agility",
+         "Intellect":"Intellect",
+         "Cunning":"Cunning",
+         "Willpower":"Willpower",
+         "Presence":"Presence"
+        },
+      "CharacteristicAbbr":{
+        "Brawn":"Vig",
+        "Agility":"Ag",
+        "Intellect":"Int",
+        "Cunning":"Ruse",
+        "Willpower":"Vol",
+        "Presence":"Pr"
+      },
+      "SkillCategory":{
+        "General":"General",
+        "Magic":"Magic",
+        "Combat":"Combat",
+        "Social":"Social",
+        "Knowledge":"Knowledge"
+      }
     }
   }
+  

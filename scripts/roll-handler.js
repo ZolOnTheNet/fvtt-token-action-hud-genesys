@@ -1,3 +1,6 @@
+//import  GenesysRoller from './genesys-roll.js'
+//import DicePrompt from './DicePromtCpy.js'
+import { lancerDeDes } from "./api_rolls.js"
 export let RollHandler = null
 
 Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
@@ -87,7 +90,18 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         #handleItemAction (event, actor, actionId) {
             const item = actor.items.get(actionId)
             //ici pour action sur item
-            item.toChat(event)
+            // const baseRollData = {
+            //     actor: toRaw(context.actor),
+            //     characteristic: selectedCharacteristic.value === '-' ? undefined : (selectedCharacteristic.value),
+            //     skillId: selectedSkill.value?.id ?? '-',
+            //     formula,
+            //     symbols: symbols
+            // }
+            // faire un simple lancer de dés 
+            lancerDeDes(actor, item, {code:"action"})            
+           // await GenesysRoller.skillRoll(baseRollData);
+            console.log("INFO :",actor, item, actionId)
+            //item.toChat(event)
         }
 
         /**
