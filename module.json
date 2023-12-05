@@ -1,7 +1,7 @@
 {
   "id": "fvtt-token-action-hud-genesys",
   "title": "Token Action HUD Genesys",
-  "description": "Token Action HUD is a repositionable HUD of actions for a selected token",
+  "description": "Token Action HUD is a repositionable HUD of actions for a selected token for Mezryss/Genesys system",
   "authors": [
     {
       "name": "Larkinabout",
@@ -14,7 +14,7 @@
   ],
   "url": "#{URL}#",
   "flags": {},
-  "version": "0.1",
+  "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "11",
     "verified": "11.313"
