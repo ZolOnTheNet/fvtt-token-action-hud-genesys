@@ -33,11 +33,11 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             if (this.actorType === 'character') {
                 this.#buildCharacterActions()
             } else if (this.actorType === 'minion') {
-                this.#buildMinionActions()            
+                this.#buildMinionActions()
             } else if (this.actorType === 'rival') {
-                this.#buildRivalActions()            
+                this.#buildRivalActions()
             } else if (this.actorType === 'nemesis') {
-                this.#buildNemesisActions()            
+                this.#buildNemesisActions()
             } else if (!this.actor) {
                 this.#buildMultipleTokenActions()
             }
@@ -125,7 +125,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                         const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                         const encodedValue = [actionTypeId, id].join(this.delimiter)
-    
+
                         return {
                             id,
                             name,
@@ -133,7 +133,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                             encodedValue
                         }
                     })
-    
+
                     // TAH Core method to add actions to the action list
                     //console.log("Action et Groupe "+type+" GRP:"+groupId, actions, groupData)
                     this.addActions(actions, groupData)

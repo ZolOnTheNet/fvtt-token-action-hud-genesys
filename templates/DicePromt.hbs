@@ -1,0 +1,44 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="dice-prompt" data-v-a942ba1d="">
+        <header data-v-a942ba1d="">
+            <span data-v-a942ba1d="">Réserve de Dés</span>
+            <span class="hint" data-v-a942ba1d="">{{description}}</span>
+        </header>
+
+	<div class="preview" data-v-a942ba1d="">
+        <div class="positive" data-v-a942ba1d="">           
+            {{{lstDesPos}}}
+        </div>
+            
+        <div class="negative" data-v-a942ba1d="">
+            {{{lstDesNeg}}}
+        </div>
+        <div class="dice-box" data-v-a942ba1d="">
+            <a data-die="A" data-v-a942ba1d="" data-cmd="A+">A<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-die="P" data-v-a942ba1d="" data-cmd="P+">P<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-die="B" data-v-a942ba1d="" data-cmd="B+">B<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-die="A" data-v-a942ba1d="" data-cmd="AU">A<i class="fas fa-arrow-up" data-v-a942ba1d=""></i></a>
+            <a data-die="P" data-v-a942ba1d="" data-cmd="PD">P<i class="fas fa-arrow-down" data-v-a942ba1d=""></i></a>
+            <span ></span>
+            <a data-die="D" data-v-a942ba1d="" data-cmd="I+">D<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-die="C" data-v-a942ba1d="" data-cmd="C+">C<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-die="S" data-v-a942ba1d="" data-cmd="S+">S<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-die="D" data-v-a942ba1d="" data-cmd="IU">D<i class="fas fa-arrow-up" data-v-a942ba1d=""></i></a>
+            <a data-die="C" data-v-a942ba1d=""  data-cmd="CD">C<i class="fas fa-arrow-down" data-v-a942ba1d=""></i></a>
+            <span ></span>
+            <a data-v-a942ba1d="" data-cmd="a+">a<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-v-a942ba1d="" data-cmd="s+">s<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-v-a942ba1d="" data-cmd="t+">t<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-v-a942ba1d="" data-cmd="h+">h<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-v-a942ba1d="" data-cmd="f+">f<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+            <a data-v-a942ba1d="" data-cmd="d+">d<i class="fas fa-plus" data-v-a942ba1d=""></i></a>
+        </div>
+    </div>
+    <select name="characteristic" data-v-a942ba1d="" >
+         {{selectOptions attribV selected=SelectAttrib}}
+    </select>
+    <select name="skill" data-v-a942ba1d="">
+        {{selectOptions lstCmp selected=SelectCmp}}
+    </select>
+    <input name="obj" type="hidden" value='{{objValue}}' />
+</form>

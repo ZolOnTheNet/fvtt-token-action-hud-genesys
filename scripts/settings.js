@@ -1,5 +1,16 @@
 import { MODULE } from './constants.js'
 
+function simpleDialogue(){
+    console.log("Fonction Simple Dialogue appelée")
+}
+function lanceLesDes(){
+    console.log("Fonction lance Les Des appelée")
+}
+function simpleDialogueYaze(){
+    console.log("Fonction yazeDiag appelée")
+}
+
+
 /**
  * Register module settings
  * Called by Token Action HUD Core to register Token Action HUD system module settings
@@ -18,4 +29,10 @@ export function register (coreUpdate) {
             coreUpdate(value)
         }
     })
+    game.api = {
+        "SimpleCmp": simpleDialogue,
+        "Simplelancer" : lanceLesDes,
+        "yazeDiag" : simpleDialogueYaze
+      };
+  
 }

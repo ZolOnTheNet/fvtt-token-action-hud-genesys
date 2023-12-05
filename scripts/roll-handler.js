@@ -1,6 +1,6 @@
 //import  GenesysRoller from './genesys-roll.js'
 //import DicePrompt from './DicePromtCpy.js'
-import { lancerDeDes } from "./api_rolls.js"
+import { lancerDeDes, LancerDesUiObj } from "./api_rolls.js"
 export let RollHandler = null
 
 Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
@@ -24,7 +24,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 return this.doRenderItem(this.actor, actionId)
             }
 
-            const knownCharacters = ['character']
+            const knownCharacters = ['character','minions','rival','nemesys']
 
             // If single actor is selected
             if (this.actor) {
@@ -71,6 +71,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         async #handleAction (event, actor, token, actionTypeId, actionId) {
             switch (actionTypeId) {
+            case 'carac':
+                // actionId contien le nom de l'attribut à lancer...
+                let des= {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, D:0, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}
+                des.Actor = actor.id
+                des.attrib = actionId.toLowerCase()
+                des.attrib2 = des.attrib // deux fois le même.
+                LancerDesUiObj(actor,"-",des)
+                break
             case 'item':
                 this.#handleItemAction(event, actor, actionId)
                 break
@@ -97,8 +105,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             //     formula,
             //     symbols: symbols
             // }
-            // faire un simple lancer de dés 
-            lancerDeDes(actor, item, {code:"action"})            
+            // faire un simple lancer de dés
+            //lancerDeDes(actor, item, {code:"action"})
+            let des= {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, D:0, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}
+            LancerDesUiObj(actor, item, des)
            // await GenesysRoller.skillRoll(baseRollData);
             console.log("INFO :",actor, item, actionId)
             //item.toChat(event)
