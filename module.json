@@ -12,7 +12,7 @@
       "url": "https://github.com/ZolOnTheNet"
     }
   ],
-  "url": "https://github.com/ZolOnTheNet/fvtt-token-action-hud-genesys",
+  "url": "#{URL}#",
   "flags": {},
   "version": "0.1",
   "compatibility": {
@@ -72,9 +72,9 @@
     }
   },
   "socket": false,
-  "manifest": "A mettre a jour",
-  "download": "A mettre a jour",
-  "readme": "https://github.com/Larkinabout/fvtt-token-action-hud-template#readme",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
+  "readme": "https://github.com/ZolOnTheNet/fvtt-token-action-hud-genesys/blob/main/readme.md",
   "protected": false,
   "coreTranslation": false,
   "library": false

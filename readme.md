@@ -6,6 +6,8 @@ Token Action HUD is a repositionable HUD of actions for a selected token.
 
 Be attention ! it's a fork of template of larkirabout developper, somme part aren't modify until now.
 
+Note : I'm French, and i use my natural language for noting many thing, and some type, your can read french texte (it's more easy for you to discover that), don't hesitate to tell me where to put in the translation file.
+
 ![Token Action HUD](.github/readme/token-action-hud.gif)
 
 # Features
