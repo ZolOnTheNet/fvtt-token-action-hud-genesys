@@ -17,9 +17,11 @@ Note : I'm French, and i use my natural language for noting many thing, and some
 - Unlock the HUD to customise layout and groups per user, and actions per actor.
 - Add your own macros, journal entries and roll table compendiums.
 
+uses at your risk.
+
 # Installation
 
-## Method 1
+## Method 1 - NOT ACTIVE DONT USE 
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
 3. Search for **Token Action HUD Pathfinder 2** 
@@ -28,7 +30,7 @@ Note : I'm French, and i use my natural language for noting many thing, and some
 ## Method 2
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
-3. In the Manifest URL field, paste: `https://github.com/Larkinabout/fvtt-token-action-hud-template/releases/latest/download/module.json`
+3. In the Manifest URL field, paste: `https://github.com/ZolOnTheNet/fvtt-token-action-hud-genesys/releases/latest/download/module.json`
 4. Click **Install** next to the pasted Manifest URL
 
 ## Required Modules
