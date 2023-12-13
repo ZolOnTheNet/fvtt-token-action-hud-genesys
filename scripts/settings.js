@@ -1,4 +1,5 @@
 import { MODULE } from './constants.js'
+import { itemRoll, just1Roll } from './forMacroApi.js'
 
 function simpleDialogue(){
     console.log("Fonction Simple Dialogue appelée")
@@ -30,9 +31,7 @@ export function register (coreUpdate) {
         }
     })
     game.api = {
-        "SimpleCmp": simpleDialogue,
-        "Simplelancer" : lanceLesDes,
-        "yazeDiag" : simpleDialogueYaze
+        "rollCmp": itemRoll,
+        "rollSimple" : just1Roll
       };
-  
 }

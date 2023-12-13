@@ -15,9 +15,9 @@ import { DicePromptGenesys, ListeDe } from './DicePrompGenesys.js'
 export function lancerDesUi(des = {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, I:0, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}){
     // fournis l'entrée du formulaire de lancer de dés
     // liaison entre DicePrompGenesys et ici
-    let actor = {}; let skill = {}; let lstAttr = {}; lst2 = {}
+     let actor = '-'; let skill = '-'; let lstAttr = {}; let lst2 = {}; let item = '-'
     if(des.Actor != '-') {
-        actor = game.actor.get(des.Actor,'c') // les attribut
+        actor = game.actor.get(des.Actor) // les attributs
         lstAttr=ListeDe(actor)
         lst2 = lstAttr // les deux liste sont des caracts par défaut
     }
@@ -25,19 +25,23 @@ export function lancerDesUi(des = {Actor:"-", skill:"-", attrib:"-", attrib2:"-"
         item = actor.items.get(des.skill)
         lst2 = ListeDe(actor,'s')
     } else if(des.Actor == '-' && des.skill != '-') item = game.items.get(des.skill)
-    let desMini = {A:0,P:0,B:0,C:0,I:0,S:0}
-    Object.keys(desMini).forEach((ele) => { desMini[ele] = des[ele]})
-    DicePromptGenesys(des.attrib, des.attrib2, desMini,lstAttr, lst2).then((v)=>{
-        console.log(v)
-        let obj = JSON.parse(v.obj.replaceAll("|",'#'))
-        jetDirect(actor, item, obj)
-    })
+    // let desMini = {A:0,P:0,B:0,C:0,I:0,S:0}
+    // Object.keys(desMini).forEach((ele) => { desMini[ele] = des[ele]})
+    LancerDesUiObj(actor, item, des)
+    // DicePromptGenesys(des.attrib, des.attrib2, desMini,lstAttr, lst2).then((v)=>{
+    //     console.log(v)
+    //     let obj = JSON.parse(v.obj.replaceAll("|",'#'))
+    //     jetDirect(actor, item, obj)
+    // })
 }
 
-export function LancerDesUiObj(actor, item, des= {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, I:0, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}){
+export function LancerDesUiObj(actor, item, des= {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, I:-1, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}){
     // ici on as les objets passé en paramètre => fixe les choses
-    des.Actor = actor.id
-    des.skill = item.id
+    let objDes = {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, I:-1, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}
+    des = jQuery.extend(objDes, des); //validation des champs minimmu
+    if(actor == '-') des.Actor = "personne" // a traduire
+        else des.Actor = actor.id
+    if(item != '-')des.skill = item.id
     let lstAttr=ListeDe(actor)
     let lst2 = lstAttr // les deux liste sont des caracts par défaut
     let val1 =0
@@ -64,9 +68,14 @@ export function LancerDesUiObj(actor, item, des= {Actor:"-", skill:"-", attrib:"
             lst2 = ListeDe(actor,'w') // a finir
             console.log("Armes : ?", item)
         }
-    } else { // les carac
-        val1 = actor.system.characteristics[des.attrib]
-        val2 = actor.system.characteristics[des.attrib2]
+    } else { // les carac, si on a un acteur
+        if(actor=='-') {
+            val1 = 1
+            val2 = 0
+        } else  {
+            if(des.attrib != '-')val1 = actor.system.characteristics[des.attrib]
+            if(des.attrib2 != '-')val2 = actor.system.characteristics[des.attrib2]
+        }
     }
     let ProD =  Math.min(val1,val2); // le minimum est le nombre de D12
     let AbD = Math.max(val1,val2);
@@ -74,7 +83,7 @@ export function LancerDesUiObj(actor, item, des= {Actor:"-", skill:"-", attrib:"
     des.A = AbD
     des.P = ProD
     console.log("Lancer Val :",val1,val2,"donne ", AbD, ProD)
-    des.I = 2; // difficulté par défaut...
+    if(des.I == -1) des.I = 2; // difficulté par défaut...
     //ici la récuper des objets
     DicePromptGenesys(des.attrib, des.skill, des, lstAttr, lst2).then((v)=>{
         console.log(v)
@@ -236,7 +245,7 @@ function parseRollResults(roll) {
         d: 0,
     });
     // Add extra symbols specified by the roll.
-    const extraSymbols = roll.data.symbols;
+    const extraSymbols = roll.symbols;
     if (extraSymbols) {
         for (const symbol of ['a', 's', 't', 'h', 'f', 'd']) {
             results[symbol] += extraSymbols[symbol] ?? 0;
