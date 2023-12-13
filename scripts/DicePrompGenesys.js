@@ -10,7 +10,8 @@ let reserveDes = {Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, 
 
 export function ListeDe(actor,typeL = 'c') { // retourne la liste des caracts ou des items
     let b = { '-':'-'}
-    if(typeL=='c'){
+    if(actor == '-') return b;
+     if(typeL=='c'){
         let a = Object.keys(actor.system.characteristics)
         a.forEach(a => { b[a]=a})
         return b;
@@ -34,7 +35,7 @@ function DestoHTML(codeDe = ['A','P','B','a','s','t']) {
     let ret = ""; let aff={'P':'P','A':'A','B':'B','C':'C','I':'D','S':'S','a':'a','s':'s','t':'t','h':'h','f':'f','d':'d'}
     codeDe.forEach(td =>{
         for(i = 1; reserveDes[td] >= i ;i++){
-            ret += '<div class="die die-'+aff[td]+'" data-cmd="'+td+'" data-v-a942ba1d="">'+aff[td]+'</div>'
+            ret += '<div class="die die-'+aff[td]+'" data-cmd="'+td+'" zoldice="">'+aff[td]+'</div>'
         }
     })
     return ret;
@@ -160,7 +161,7 @@ function handleChangeSelect(event){
     changeReserve(formElement,true) // change la partie positive
 }
 // XXX a modifier car correspond à npqv1 test de validation fin
-function verifSyntheseData(formData) {
+// function verifSyntheseData(formData) {
     // Verification possible : nombre de Dés au dela de 0
     // if (!formData?.score) {
     //   throw new Error('Score is required');
@@ -173,7 +174,7 @@ function verifSyntheseData(formData) {
     //   if(formData?.dommage.toUpperCase().indexOf("D") == -1)
     //     throw new Error('Dommage necessite un dé');
     // }
-  }
+//   }
 
 export  async function DicePromptGenesys(parChamp1="brawn", parChamp2 = "-", parDices ={Actor:"-", skill:"-", attrib:"-", attrib2:"-", A:0, P:0, B:0, I:0, C:0, S:0, a:0, s:0, t: 0, h:0, f:0, d:0}, valChamp1={}, valChamp2={}){ // A: Abylitye
     let dommageFormule = "3d6"
@@ -214,16 +215,16 @@ export  async function DicePromptGenesys(parChamp1="brawn", parChamp2 = "-", par
               callback: (html) => {
                 const formData = new FormDataExtended(html[0].querySelector('form'))
                   .toObject();
-                  verifSyntheseData(formData);
+                  //verifSyntheseData(formData);
                 resolve(formData);
               },
             },
           },
           render: (html) => {
             //html.on('click', 'button[data-preset]', handleCranPreset);
-            html.on('click', 'a[data-v-a942ba1d]', handleDeChangement);
-            html.on('click', '.die[data-v-a942ba1d]', handleDeSuppr)
-            html.on('change', 'select[data-v-a942ba1d]',handleChangeSelect)
+            html.on('click', 'a[zoldice]', handleDeChangement);
+            html.on('click', '.die[zoldice]', handleDeSuppr)
+            html.on('change', 'select[zoldice]',handleChangeSelect)
             // let formElement = $(html).parents('form')
             // changeReserve(formEle,true)
             // changeReserve(formEle,false)
