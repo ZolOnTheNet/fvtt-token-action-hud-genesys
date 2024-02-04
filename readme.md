@@ -42,9 +42,9 @@ Token Action HUD uses the [Color Picker](https://foundryvtt.com/packages/color-p
 
 # Support
 
-For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/Larkinabout/fvtt-token-action-hud-core/wiki/How-to-Use-Token-Action-HUD)
+For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/ZolOnTheNet/fvtt-token-action-hud-genesys/wiki)
 
-For questions, feature requests or bug reports, please open an issue [here](https://github.com/Larkinabout/fvtt-token-action-hud-core/issues).
+For questions, feature requests or bug reports, please open an issue [here](https://github.com/ZolOnTheNet/fvtt-token-action-hud-genesys/issues).
 
 Pull requests are welcome. Please include a reason for the request or create an issue before starting one.
 
