@@ -188,7 +188,7 @@ export  async function DicePromptGenesys(parChamp1="brawn", parChamp2 = "-", par
     Object.keys(parDices).forEach(key => { reserveDes[key]=parDices[key]}) // recopie dans la globale
     let DesPos =  ['P','A','B','a','s','t']
     let DesNeg =  ['C','I','S','h','f','d']
-    context = {
+    let context = {
         attribV : lstAttrib,
         lstCmp : lstValCmp,
         dommage: dommageFormule,
